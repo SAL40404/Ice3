@@ -3,9 +3,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ice³ | Geometric Chill</title>
+    <style>
+        /* CSS resets and variables for a clean start */
+        :root {
+            --bg-dark: #0a0a0c;
+            --ice-blue: #00e5ff;
+            --frost-white: #e0f7fa;
+            --subtle-gray: #333;
+            --text-main: #f0f0f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'SF Mono', 'Roboto Mono', 'Courier New', monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow: hidden; /* Prevent scrolling for the geometric bg */
+        }
+
+        /* The Main 'Glassmorphism' Container */
+        .main-container {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            width: 90%;
+            max-width: 450px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 229, 255, 0.05);
+            backdrop-filter: blur(8px);
+            z-index: 10;
+        }
+
+        /* The Title Section */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--frost-white), var(--ice-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: var(--subtle-gray);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Body Text */
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            color: #ccc;
+        }
+
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            text-decoration: none;
+            color: var(--bg-dark);
+            background-color: var(--ice-blue);
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(0, 229, 255, 0.2);
+        }
+
+        .btn:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 10px rgba(0, 229, 255, 0.3);
+        }
+
+        /* Geometric Background Elements (Crucial for the aesthetic) */
+        .geo-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            opacity: 0.05;
+        }
+
+        .tri-1 {
+            border-width: 0 100vw 100vh 0;
+            border-color: transparent var(--subtle-gray) transparent transparent;
+            bottom: -20vh;
+        }
+
+        .tri-2 {
+            border-width: 100vh 0 0 100vw;
+            border-color: var(--ice-blue) transparent transparent transparent;
+            opacity: 0.02;
+            top: -20vh;
+        }
+
+        /* Footer text */
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: var(--subtle-gray);
+        }
+    </style>
 </head>
 <body>
-    <h1>Hello, World!</h1>
+
+    <div class="geo-bg">
+        <div class="triangle tri-1"></div>
+        <div class="triangle tri-2"></div>
+    </div>
+
+    <main class="main-container">
+        <header>
+            <h1>Ice³</h1>
+            <div class="subtitle">Minimal Geometric Vibe</div>
+        </header>
+        
+        <p>A static placeholder exploring structure, clarity, and cool tones. Minimalist logic. Sharp design.</p>
+        
+        <a href="#" class="btn">Explore Core</a>
+
+        <footer>ic3-cube © 2024</footer>
+    </main>
+
 </body>
 </html>
